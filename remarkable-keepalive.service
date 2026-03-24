@@ -1,0 +1,10 @@
+[Unit]
+Description=reMarkable document keepalive refresh
+After=network-online.target xochitl.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/remarkable-keepalive
+ExecStart=/home/root/bin/remarkable-keepalive.sh
+

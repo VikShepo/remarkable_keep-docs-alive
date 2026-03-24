@@ -1,0 +1,13 @@
+[Unit]
+Description=Run reMarkable keepalive refresh every hour
+
+[Timer]
+OnBootSec=15m
+OnUnitActiveSec=1h
+AccuracySec=10m
+RandomizedDelaySec=5m
+Persistent=true
+Unit=remarkable-keepalive.service
+
+[Install]
+WantedBy=timers.target
