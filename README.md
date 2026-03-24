@@ -1,7 +1,6 @@
 # reMarkable Sync Keepalive
 
-This package installs a small background job on a reMarkable 2 or reMarkable Paper Pro.
-
+This package installs a small background job on a reMarkable 2 or reMarkable Paper Pro. It prevents your notes and documents from reaching the 50-day unopened limit by opening them automatically in the background during that period, so they continue syncing with the reMarkable desktop and web app.
 It does not try to fake visible taps on the UI. Instead, it refreshes the same per-document metadata that reMarkable updates when a document is opened, then lets `xochitl` push those changes while Wi-Fi is available. That is the stable SSH-safe path here.
 
 ## What it does
@@ -93,3 +92,6 @@ systemctl status remarkable-keepalive.service --no-pager
 ## Important tradeoff
 
 There is no stable, documented headless API for literally opening every PDF, EPUB, and notebook in the background over SSH on both current device families. This implementation uses metadata refresh plus sync confirmation instead. That is much less brittle than screen-coordinate automation and is the safer option to keep running after OS updates.
+
+## Warning!
+Warning: Use this tool at your own risk. I provide it without any warranty, and I am not responsible for corrupted data, deleted notes, sync issues, or any other damage or data loss that may result from its use.
